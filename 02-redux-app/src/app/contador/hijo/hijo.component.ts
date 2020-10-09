@@ -34,6 +34,4 @@ export class HijoComponent implements OnInit {
     this.store.dispatch(actions.dividir({numero: 2}));
   }
 
-
-
 }
