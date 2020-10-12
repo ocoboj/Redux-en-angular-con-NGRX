@@ -5,7 +5,10 @@ import { Todo } from './models/todo.model';
 
 
 export const estadoInicial: Todo[] = [
-  new Todo ('Salvar al mundo')
+  new Todo ('Comprar'),
+  new Todo ('Limpiar '),
+  new Todo ('Descansar'),
+  new Todo ('Cocinar')
 ];
 
 const _todoReducer = createReducer(estadoInicial,
