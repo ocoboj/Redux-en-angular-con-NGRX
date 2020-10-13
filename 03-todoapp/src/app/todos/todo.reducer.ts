@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { crear, toggle } from './todo.actions';
+import { crear, toggle, editar } from './todo.actions';
 import { Todo, } from './models/todo.model';
 
 
@@ -28,6 +28,22 @@ const _todoReducer = createReducer(estadoInicial,
       }
     });
   }),
+
+  on(editar, (state, { id, texto }) => {
+
+    return state.map(todo => {
+
+      if (todo.id === id) {
+        return {
+          ...todo,
+          texto: texto
+        }
+      } else {
+        return todo;
+      }
+    });
+  }),
+
 );
 
 export function todoReducer(state, action) {
