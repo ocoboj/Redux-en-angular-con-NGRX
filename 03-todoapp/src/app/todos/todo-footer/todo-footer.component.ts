@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import * as actions from '../../filtro/filtro.actions';
+import { limpiarTodos } from '../todo.actions';
 
 
 @Component({
@@ -32,6 +33,11 @@ export class TodoFooterComponent implements OnInit {
   cambiarFiltro( filtro: actions.filtrosValidos){
 
     this.store.dispatch(actions.setFiltro({ filtro: filtro }) );
+  }
+
+  limpiarCompletados() {
+
+    this.store.dispatch( limpiarTodos() );
   }
 
 }
